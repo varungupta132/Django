@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.login-options button {
+  background-color: #3b5998; /* Facebook blue */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 48%;
+}
+
+.login-options button:first-child {
+  margin-right: 10px;
+}
+
+.login-options button:hover {
+  background-color: #2e447a;
+}
+
+.google-login {
+  background-color: #dd4b39; /* Google red */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 48%;
+  margin-top: 10px;
+}
+
+.google-login:hover {
+  background-color: #c9302c;
+}
+
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+.message {
+	color: #00698f;
+	background-color: #c7f5d9;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Signup</h1>
+  <div class="message">
+	{% if messages %}
+		{% for message in messages %}
+			<p class="message">{{ message }}</p>
+		{% endfor %}
+	{% endif %}
+</div>  
+
+<form method="POST">
+
+
+	{% csrf_token %}
+
+
+    <input type="text" placeholder="Username" required name="username">
+    <input type="password" placeholder="Create password" required name="password">
+    <button type="submit">Signup</button>
+  </form>
+  <div class="login-link">Already have an account? <a href="/gen/login/">Login</a></div>
+  <div class="login-options">
+    <button type="button">Login with Facebook</button>
+    <button type="button" class="google-login">Login with Google</button>
+  </div>
+</div>
+</body>
+</html>

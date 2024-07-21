@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.text{
+	color: green;
+	font-weight: bold;
+	font-family: 'Times New Roman', Times, serif;
+}
+</style>
+
+<div class="container mt-5 col-5">
+
+<form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	<h3 class="text text-center"> Varun receipt Generator  </h3>
+	
+	<h4 style="font-family: 'Times New Roman', Times, serif; font-size:20px;">Update Data </h4>
+	
+	<div class="form-group">
+	<label for="exampleInputEmail1">Item name </label>
+	<input type="text" name="name" value="{{receipt.name}}" class="form-control" required>
+	</div>
+	<div class="form-group">
+	<label for="exampleInputEmail1">Price </label>
+	<input name="price" type="number" value="{{receipt.price}}" type="text" class="form-control" required>
+	</div>
+	<div class="form-group">
+	<label for="exampleInputPassword1">Quantity </label>
+	<input name="quantity" type="number" value="{{receipt.quantity}}" class="form-control"
+		required>
+	<br> 
+
+	<button type="submit" class="btn btn-danger">Update Data</button>
+</form>
+
+
+</div>
+

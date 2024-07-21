@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-header {
+            background-color: #337ab7;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .login-header h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .login-form {
+            padding: 20px;
+        }
+        .login-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .login-form input[type="text"], .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .login-form .login-btn, .login-form .register-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+        }
+        .login-form .login-btn {
+            background-color: #007bff;
+            color: #fff;
+            margin-right: 10px;
+        }
+        .login-form .login-btn:hover {
+            background-color: #0056b3;
+        }
+        .login-form .register-btn {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .login-form .register-btn:hover {
+            background-color: #c82333;
+        }
+        .message {
+            color: #00698f;
+            background-color: #c7f5d9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Login</h2>
+        </div>
+        <div class="message">
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="message">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <form class="login-form" method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" name="password" required>
+            </div>
+            <div>
+                <a href="/gen/register/" class="register-btn">Register</a>
+                <button type="submit" class="login-btn">Login</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
