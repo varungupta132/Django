@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            padding: 1rem;
+        }
+        .navbar a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .navbar {
+            background-color: transparent; /* Fully transparent background */
+            padding: 1rem;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .jumbotron {
+            background-color: #fff;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .jumbotron h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .jumbotron p {
+            font-size: 1.2rem;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col {
+            flex: 1;
+            margin: 1rem;
+            min-width: 250px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+        }
+        .card h5 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        .card p {
+            font-size: 1rem;
+        }
+        .card a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .card a:hover {
+            background-color: #0056b3;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.5); /* Transparency added */
+            padding: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            background-image: url('https://w0.peakpx.com/wallpaper/578/126/HD-wallpaper-krishna-pics-blue-art-lord-god.jpg');
+            background-size: 63% 103%;
+            background-position: top center;
+            background-repeat: no-repeat;
+
+        }
+    
+    .jumbotron {
+        background-color: rgba(255, 255, 255, 0.5); /* Transparency added */
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+    .jumbotron h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .jumbotron p {
+        font-size: 1.2rem;
+    }
+    .image-container {
+        opacity: 0.3; /* adjust the value to your desired level of transparency */
+    }
+    
+    .image-container img {
+        width: 100%; /* make the image take up the full width of the container */
+        height: 100%; /* make the image take up the full height of the container */
+        object-fit: cover; /* make the image cover the entire container */
+    }
+    
+    .image-container1 {
+        opacity: 0.5; /* adjust the value to your desired level of transparency */
+    }
+    
+    .image-container1 img {
+        width: 100%; /* make the image take up the full width of the container */
+        height: 100%; /* make the image take up the full height of the container */
+        object-fit: cover; /* make the image cover the entire container */
+    }
+    .image-container3 {
+        opacity: 0.5; /* adjust the value to your desired level of transparency */
+    }
+    
+    .image-container3 img {
+        width: 100%; /* make the image take up the full width of the container */
+        height: 100%; /* make the image take up the full height of the container */
+        object-fit: cover; /* make the image cover the entire container */
+    }
+    .card {
+      margin-bottom: 100px; /* Add space between containers */
+    }
+  
+    .wrapper {
+        height: 500px; /* Set a fixed height */
+        overflow-y: auto; /* Enable scrollbar */
+      }
+      
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="{% url 'send_email' %}">Send Email</a>
+        <a href="/login/" class="btn">Login</a>
+        <a href="/api/v1/" > API VIEW </a>
+        <a href="gen/" > Receipt Generator</a>
+
+
+    </div>
+    <div class="container">
+        <div class="jumbotron">
+            
+            <h1>Welcome to My Varun Gupta's Site!</h1>
+            <p>This is a simple and beautiful site built with Django and basic CSS styling.</p>
+            <p>Explore the features and learn more about what we offer.</p>
+            <a href="#">Learn more</a>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="image-container1">
+
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d29ya2F8ZW58MHx8MHx8&w=1000&q=80" alt="Feature 1">
+                    <h5>Feature 1</h5>
+                    <p>Description of the first feature. It’s very useful and helps you achieve great things.</p>
+                    <a href="#">Go somewhere</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="image-container">
+                    <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Feature 2">
+                    <h5>Feature 2</h5>
+                    <p>Description of the second feature. It’s very useful and helps you achieve great things.</p>
+                    <a href="#">Go somewhere</a>
+                </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="image-container3">
+
+                    <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg" alt="Feature 3">
+                    <h5>Feature 3</h5>
+                    <p>Description of the third feature. It’s very useful and helps you achieve great things.</p>
+                    <a href="#">Go somewhere</a>
+                </div>
+
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+</html>
